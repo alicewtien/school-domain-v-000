@@ -7,10 +7,10 @@ class School
   end
 
   def add_student(name, grade)
-    if roster[grade]
+    if roster[grade] # if the roster already exists, then add names
       roster[grade] << name
     else
-      roster[grade] = []
+      roster[grade] = [] # otherwise create a roster and add names
       roster[grade] = [name]
     end
   end
@@ -20,7 +20,7 @@ class School
   end
 
   def sort
-    sorted = {}
+    sorted = {} # whenever data is manipulated, always better to created a new hash/array for the new data
     roster.each do |grade, students|
       sorted[grade] = students.sort
     end
